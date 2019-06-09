@@ -4,8 +4,8 @@ module CdDispatch
   class CLI < Thor
     LOG_FILE = "/tmp/cd_dispatch-sync.log"
 
-    def initialize(*args, out: $stdout, **kwargs, &block)
-      super(*args, **kwargs, &block)
+    def initialize(*args, out: $stdout)
+      super(*args)
       self.out = out
       self.logger = Logger.new(LOG_FILE, "daily", 5)
     end
